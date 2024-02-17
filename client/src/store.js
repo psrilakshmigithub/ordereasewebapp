@@ -3,10 +3,13 @@ import {thunk} from 'redux-thunk'
 
 import { configureStore,getDefaultMiddleware } from '@reduxjs/toolkit';
 
-import getOrderItemsReducer from '../src/reducers/orderItemsReducer'
+import getOrderItemsReducer from '../src/reducers/orderItemsReducer';
+import registerUserReducer from '../src/reducers/userReducer';
 
 const finalReducer=combineReducers({
-    getOrderItemsReducer:getOrderItemsReducer
+    getOrderItemsReducer:getOrderItemsReducer,
+    registerUserReducer:registerUserReducer
+
 })
 
 const store = configureStore({

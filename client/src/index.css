@@ -22,3 +22,7 @@ code {
 .flex-container{
   display: flex;
 }
+input{
+  margin-top: 10px !important;
+  box-shadow: none !important;
+}

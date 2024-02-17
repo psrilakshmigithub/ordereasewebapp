@@ -14,7 +14,7 @@ export default function Navbar(){
         <a className="nav-link" href="#">Home <span className="sr-only"></span></a>
       </li>    
       <li className="nav-item">
-        <a className="nav-link" href="#">Login</a>
+        <a className="nav-link" href="/login">Login</a>
       </li>
       <li className="nav-item">
         <a className="nav-link " href="#">Cart</a>
