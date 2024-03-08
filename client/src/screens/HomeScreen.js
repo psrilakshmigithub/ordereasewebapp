@@ -1,7 +1,6 @@
 import react from 'react';
 import { useEffect, useState} from 'react';
 import { useDispatch,useSelector } from 'react-redux';
-import pizzadata from '../pizzadata';
 import Item from '../components/Item';
 import {getOrderItems} from '../actions/orderItemsAction';
 
@@ -15,12 +14,13 @@ export default function HomeScreen(){
 
     return (
         <>
-        <div className='row'>
+        <h1> Order Ease </h1>
+        <div className='row justify-content-center'>
 {loading? (<h1>Loading...</h1>): error ? (<h1>Something went error...</h1>) :
-console.log("order items :"+orderItems)
+
          ( orderItems.map((item)=>{
            return(
-            <div className='col-md-4 p-3'>
+            <div className='col-md-3 p-3' key={item._id}>
               <div>
               <Item  ItemInfo={item}/>
               </div>

@@ -1,21 +1,27 @@
 import react from 'react';
 import { useState } from 'react';
+import { UseDispatch,useDispatch,useSelector } from 'react-redux';
 import Modal from 'react-bootstrap/Modal';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import ItemDescription from '../components/ItemDescription';
+import {addToCartAction} from '../actions/addToCartAction';
 
 export default function Item({ ItemInfo }) {
     const [quantity,setQuantity]=useState(1);
     const [varient,setVarient]=useState("small");
     const [show, setShow] = useState(false);  
     const [data, setData] = useState(ItemInfo);
+    const dispatch=useDispatch();
+    function addtocart(){
+        dispatch(addToCartAction(ItemInfo,quantity,varient))
+    }
     return (
 
        <>
         <div className='m-5 shadow-lg p-3 mb-5 bg-white rounded '>
               <div className='container' >
               <h2>{ItemInfo.name}</h2>
-            <img onClick={()=>{setShow(true);setData(ItemInfo)}} alt="item" src={ItemInfo.image} className='img-fluid' style={{width:'200px',height:'200px;'}}></img>
+            <img onClick={()=>{setShow(true);setData(ItemInfo)}} alt="item" src={ItemInfo.image} className='img-fluid' style={{width:'200px',height:'200px'}}></img>
         
               </div>
                <div className='flex-container'>
@@ -45,7 +51,7 @@ export default function Item({ ItemInfo }) {
                   
                 </div>
                 <div className='m-1 w-100'>
-                    <button className='btn btn-primary'>Add to Cart</button>
+                    <button className='btn btn-primary' onClick={addtocart}>Add to Cart</button>
                 </div>
             </div>
         </div>

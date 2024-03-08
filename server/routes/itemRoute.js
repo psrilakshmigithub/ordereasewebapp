@@ -5,7 +5,7 @@ const orderItem= require('../models/orderitems')
 router.get('/getOrderItems',async (req, res) => {
 try{
     const items=await orderItem.find({}); 
-    console.log(items);
+    console.log("items :"+items);
    return res.send(items);
  
 }catch(err){

@@ -30,3 +30,18 @@ input{
 h2{
   color: rgb(182, 33, 33) !important;
 }
+.text-left{
+  text-align: left;
+}
+.fa-plus{
+  color: green;
+  margin: 5px;
+}
+.fa-minus{
+  color: red;
+  margin: 5px;
+}
+.fa-trash{
+  color: red;
+  margin: 5px;
+}
