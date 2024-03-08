@@ -50,7 +50,7 @@ const  pizzadata =
     },
     ],
     category:"nonveg",
-    image:"https://cache.dominos.com/nolo/ca/en/6_121_7/assets/build/market/CA/_en/images/img/products/larges/S_PIZVX.jpg",
+    image:"https://media.dominos.com/content/images/menu_tc-pizza_pacific-veggie_2023-05_thumb.jpg",
     description:"Chicken Tikka"
     }
     ]

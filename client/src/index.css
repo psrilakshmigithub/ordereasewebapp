@@ -13,11 +13,11 @@ code {
 }
 
 .nav-link{
-  color: black !important;
+  color: rgb(182, 33, 33) !important;
 }
 
 .navbar-brand{
-  color: black !important;
+  color: rgb(182, 33, 33) !important;
 }
 .flex-container{
   display: flex;
@@ -25,4 +25,8 @@ code {
 input{
   margin-top: 10px !important;
   box-shadow: none !important;
+}
+
+h2{
+  color: rgb(182, 33, 33) !important;
 }

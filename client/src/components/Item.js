@@ -14,7 +14,7 @@ export default function Item({ ItemInfo }) {
        <>
         <div className='m-5 shadow-lg p-3 mb-5 bg-white rounded '>
               <div className='container' >
-              <h1>{ItemInfo.name}</h1>
+              <h2>{ItemInfo.name}</h2>
             <img onClick={()=>{setShow(true);setData(ItemInfo)}} alt="item" src={ItemInfo.image} className='img-fluid' style={{width:'200px',height:'200px;'}}></img>
         
               </div>

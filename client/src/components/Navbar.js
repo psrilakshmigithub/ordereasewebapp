@@ -4,7 +4,7 @@ export default function Navbar(){
    <>
    <div className='container'>
 <nav className="navbar navbar-expand-lg shadow-lg p-3 mb-5 bg-white rounded">
-  <a className="navbar-brand" href="#">Navbar</a>
+  <a className="navbar-brand" href="#">OrderEase</a>
   <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span className="navbar-toggler-icon"></span>
   </button>

@@ -1,4 +1,3 @@
-import e from 'express'
 import react, { useState, useEffect } from 'react'
 
 export default function Registersscreen() {
@@ -30,7 +29,7 @@ export default function Registersscreen() {
                     <h2 className="text-center m-2" style={{ fontSize: '35px' }}>Register</h2>
                     <div>
                         <input required type="text" placeholder="name" className="form-control"  value={(e)=>{setname(e.target.value)}} />
-                        <input required type="text" placeholder="email" className="form-control"   value={(e)=>{setemai(e.target.value)}} />
+                        <input required type="text" placeholder="email" className="form-control"   value={(e)=>{setemail(e.target.value)}} />
                         <input required
                          type="text" 
                          placeholder="Password" 

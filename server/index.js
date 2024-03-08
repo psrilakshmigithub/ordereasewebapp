@@ -1,23 +1,16 @@
 const express = require('express');
 const db = require('./db');
 const app = express();
-const orderItem = require('./models/orderitems');
+const itemRoute=require('./routes/itemRoute')
 
 app.use(express.json());
+
+app.use('/api/orderItems',itemRoute);
 
 app.get("/", (req, res) => {
     res.send("Server running ");
 });
 
-app.get('/getOrderItems', (req, res) => {
-
-    orderItem.findOne({name:"Pepproni Pizza"}).catch(err=> {       
-            console.log(err);               
-    }).then((items)=>{
-        res.send(items);
-     } );
-     
-});
 
 const port = process.env.port || 5000;
 
