@@ -38,6 +38,17 @@ switch (action.type){
         error:action.payload,
         success:false
     }
+    case "USER_LOGOUT_SUCCESS":return{
+        currentUser:null,
+        loading:false,
+        success:true
+    }
+    case "USER_LOGOUT_FAILED":return{
+        loading:false,
+        error:action.payload,
+        success:false
+    }
+    
     default:return state
 
 }

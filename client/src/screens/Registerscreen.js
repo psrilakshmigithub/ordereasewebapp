@@ -46,8 +46,8 @@ export default function RegisterScreen() {
                         className="form-control" 
                         onChange={(e)=>{setcpassword(e.target.value)}} value={cpassword}
                         />
-                        <button onClick={register} className="btn mt-3">Register</button>
-
+                        <button onClick={register}  style={{"backgroundColor":"rgb(182, 33, 33)", "color":"white","fontSize":"20px"}} className="form-control btn mt-3">Register</button>
+                        <p><a href="/login" class="link-underline-primary">Login</a></p>
                     </div>
                 </div>
 

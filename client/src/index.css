@@ -45,3 +45,13 @@ h2{
   color: red;
   margin: 5px;
 }
+
+.btn{
+  background-color: red;
+}
+.items-container{
+  border: 1px solid  rgb(182, 33, 33) !important;
+}
+.cart-items{
+  border: 1px solid  rgb(182, 33, 33) !important;
+}

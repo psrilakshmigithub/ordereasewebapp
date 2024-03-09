@@ -17,17 +17,16 @@ function login(){
     const user={
         email,
         password
-    }
-    
+    }    
 dispatch(loginUser(user))
 }
 
     return(
         <div>
-        <h1>Login Screen</h1>
+       
         <div className="row justify-content-center mt-5">
                 <div className="col-md-5 mt-5">
-                    <h2 className="text-center m-2" style={{ fontSize: '35px' }}>Register</h2>
+                    <h2 className="text-center m-2" style={{ fontSize: '35px' }}>Login</h2>
                     <div>                       
                         <input required type="text" placeholder="email" className="form-control" 
                            onChange={(e)=>setemail(e.target.value)}  value={email} />
@@ -38,8 +37,8 @@ dispatch(loginUser(user))
                          onChange={(e)=>setpassword(e.target.value)}  value={password}
                         />
                       
-                        <button onClick={login} className="btn mt-3">Login</button>
-
+                        <button onClick={login}  style={{"backgroundColor":"rgb(182, 33, 33)", "color":"white","fontSize":"20px"}} className=" form-control btn mt-3">Login</button>
+                        <p><a href="/register" class="link-underline-primary">Register</a></p>
                     </div>
                 </div>
 

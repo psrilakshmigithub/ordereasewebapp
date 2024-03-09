@@ -15,12 +15,12 @@ export default function HomeScreen(){
     return (
         <>
         <h1> Order Ease </h1>
-        <div className='row justify-content-center'>
+        <div className='row'>
 {loading? (<h1>Loading...</h1>): error ? (<h1>Something went error...</h1>) :
 
          ( orderItems.map((item)=>{
            return(
-            <div className='col-md-3 p-3' key={item._id}>
+            <div className='col-md-4 p-3' key={item._id}>
               <div>
               <Item  ItemInfo={item}/>
               </div>

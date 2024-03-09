@@ -24,7 +24,7 @@ export default function Item({ ItemInfo }) {
             <img onClick={()=>{setShow(true);setData(ItemInfo)}} alt="item" src={ItemInfo.image} className='img-fluid' style={{width:'200px',height:'200px'}}></img>
         
               </div>
-               <div className='flex-container'>
+               <div className='flex-container ' >
                 <div className='w-100'>
                     <label className='w-100 m-1'>varients</label>
                     <select value={varient}   onChange={(e)=> setVarient(e.target.value)}>
@@ -51,7 +51,7 @@ export default function Item({ ItemInfo }) {
                   
                 </div>
                 <div className='m-1 w-100'>
-                    <button className='btn btn-primary' onClick={addtocart}>Add to Cart</button>
+                    <button className='btn btn-primary ' onClick={addtocart}>Add to Cart</button>
                 </div>
             </div>
         </div>

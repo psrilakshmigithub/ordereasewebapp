@@ -1,11 +1,19 @@
 import react from 'react';
-import { UseSelector, useSelector } from 'react-redux';
+import { UseSelector, useDispatch, useSelector } from 'react-redux';
+import { UseDispatch } from 'react-redux';
 import Nav from 'react-bootstrap/Nav';
 import NavDropdown from 'react-bootstrap/NavDropdown';
+import { logoutUser } from '../actions/userAction';
 
 export default function Navbar() {
   const cartState = useSelector(state => state.addToCartReducer)
   const userState = useSelector(state => state.loginUserReducer)
+  const dispatch=useDispatch();
+  console.log("cuurent user:"+ JSON.stringify(userState.currentUser));
+  function logout(){
+    dispatch(logoutUser())
+  }
+
   return (
     <>
       <div className='container'>
@@ -19,6 +27,7 @@ export default function Navbar() {
               <li className="nav-item active">
                 <a className="nav-link" href="/">Home <span className="sr-only"></span></a>
               </li>
+              
               {(userState.currentUser) ?
                 (<div class="dropdown">
                   <Nav>
@@ -26,17 +35,13 @@ export default function Navbar() {
                       id="nav-dropdown-dark-example"
                       title={userState.currentUser.name}
                       menuVariant="light"
-                    >
-                    
+                    >                  
                       <NavDropdown.Item href="/">
                         Orders
                       </NavDropdown.Item>
-                      <NavDropdown.Item href="/logout">LogOut</NavDropdown.Item>
-
+                      <NavDropdown.Item  onClick={logout}>LogOut</NavDropdown.Item>
                     </NavDropdown>
                   </Nav>
-
-
                 </div>)
 
                 :
