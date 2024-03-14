@@ -9,7 +9,7 @@ try{
    return res.send(items);
  
 }catch(err){
-return res.status(400).json({message:error});
+return res.status(400).json({message:err});
     console.log(err);    
 }           
  
