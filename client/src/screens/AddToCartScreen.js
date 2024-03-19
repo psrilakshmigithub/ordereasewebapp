@@ -1,5 +1,5 @@
 import react from 'react'
-import { UseSelector, useDispatch, useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import {addToCartAction} from '../actions/addToCartAction';
 import {deleteFromCartAction} from '../actions/addToCartAction';
 import CheckOut from '../components/CheckOut'

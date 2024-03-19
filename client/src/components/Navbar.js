@@ -9,7 +9,10 @@ export default function Navbar() {
   const cartState = useSelector(state => state.addToCartReducer)
   const userState = useSelector(state => state.loginUserReducer)
   const dispatch=useDispatch();
-  console.log("cuurent user:"+ JSON.stringify(userState.currentUser));
+  const isCurrentUserEmpty = !userState.currentUser || userState.currentUser.length === 0;
+  console.log('Is currentUser empty?', isCurrentUserEmpty);
+  //console.log("userDetails:"+ Object.keys(userState.currentUser).length);
+ // console.log("cuurent user:"+ userDetails.length>0);
   function logout(){
     dispatch(logoutUser())
   }
@@ -28,16 +31,16 @@ export default function Navbar() {
                 <a className="nav-link" href="/">Home <span className="sr-only"></span></a>
               </li>
               
-              {(userState.currentUser) ?
-                (<div class="dropdown">
+              {(!isCurrentUserEmpty) ?
+                (<div className="dropdown">
                   <Nav>
                     <NavDropdown
                       id="nav-dropdown-dark-example"
                       title={userState.currentUser.name}
                       menuVariant="light"
                     >                  
-                      <NavDropdown.Item href="/">
-                        Orders
+                      <NavDropdown.Item href="/myorders">
+                       My Orders
                       </NavDropdown.Item>
                       <NavDropdown.Item  onClick={logout}>LogOut</NavDropdown.Item>
                     </NavDropdown>

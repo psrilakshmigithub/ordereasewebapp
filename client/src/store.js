@@ -8,7 +8,7 @@ import {addToCartReducer} from '../src/reducers/addToCartReducer';
 
  import {registerUserReducer} from '../src/reducers/userReducer';
  import {loginUserReducer} from '../src/reducers/userReducer';
- import {orderReducer} from '../src/reducers/orderReducer';
+ import {orderReducer,myOrdersReducer} from '../src/reducers/orderReducer';
 
 
 
@@ -17,7 +17,8 @@ const finalReducer=combineReducers({
     addToCartReducer:addToCartReducer,
    registerUserReducer:registerUserReducer,
    loginUserReducer:loginUserReducer,
-   orderReducer:orderReducer
+   orderReducer:orderReducer,
+   myOrdersReducer:myOrdersReducer
 })
 
 

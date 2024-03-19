@@ -22,7 +22,9 @@ export const loginUser=(user)=>async (dispatch,getstate)=>{
       console.log("user response:"+user);
       dispatch({type:"USER_LOGIN_SUCCESS",payload:response.data})
         localStorage.setItem("currentUser",JSON.stringify(response.data));
+        
         window.location.href='/'
+
 
     }
     catch(err){
@@ -40,6 +42,7 @@ export const logoutUser=()=>async (dispatch)=>{
      
       dispatch({type:"USER_LOGOUT_SUCCESS"})
         localStorage.removeItem("currentUser");
+        localStorage.removeItem("cartItems");
         window.location.href='/login'
 
     }

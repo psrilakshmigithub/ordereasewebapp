@@ -38,7 +38,7 @@ dispatch(loginUser(user))
                         />
                       
                         <button onClick={login}  style={{"backgroundColor":"rgb(182, 33, 33)", "color":"white","fontSize":"20px"}} className=" form-control btn mt-3">Login</button>
-                        <p><a href="/register" class="link-underline-primary">Register</a></p>
+                        <p><a href="/register" className="link-underline-primary">Register</a></p>
                     </div>
                 </div>
 

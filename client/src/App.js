@@ -8,7 +8,7 @@ import HomeScreen from './screens/HomeScreen';
 import CartScreen from './screens/AddToCartScreen';
 import RegisterScreen from './screens/Registerscreen';
 import LoginScreen from './screens/LoginScreen';
-
+import MyOrdersScreen from './screens/MyOrdersScreen';
 
 import {BrowserRouter,Route,Routes,Link,Switch} from 'react-router-dom';
 
@@ -24,7 +24,7 @@ function App() {
       <Route path="/addtocart" element={<CartScreen />}  /> 
       <Route path="/register" element={<RegisterScreen/>}/>
       <Route path="/login" element={<LoginScreen/>}/>
-     
+     <Route path="/myorders" element={<MyOrdersScreen/>}/>
         </Routes>  
             
       </BrowserRouter>

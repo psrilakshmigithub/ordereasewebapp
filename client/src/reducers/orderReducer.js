@@ -21,3 +21,27 @@ export const orderReducer=(state={},action)=>{
     }
 
 }
+
+export const myOrdersReducer=(state={myOrders:[]},action)=>{
+
+    switch(action.type){
+        case "MYORDERS_REQUEST_PLACED":return{
+            loading:true
+            
+        }
+        case "MYORDERS_REQUEST_SUCCESS":return{
+            loading:false,
+            success:true,
+            myOrders:action.payload
+
+        }
+        case "MYORDERS_REQUEST_FAILED":return{
+            loading:true,
+            error:action.payload,
+            success:false,
+        }
+        default: return state
+
+    }
+
+}
