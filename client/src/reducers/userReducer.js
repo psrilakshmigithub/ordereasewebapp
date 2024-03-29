@@ -37,6 +37,10 @@ export const allUserReducer = (state = {}, action) => {
             error: action.payload,
             success: false
         }
+        case "DELETE_USER" : return{
+            ...state,            
+            allUsers: state.allUsers.filter(user => user._id !== action.payload)
+        }
         default: return state
     }
 }

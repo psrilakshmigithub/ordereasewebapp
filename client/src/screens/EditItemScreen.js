@@ -31,8 +31,7 @@ export default function EditItemScreen(){
        
         console.log("use effect item"+item);
         if(item){
-            console.log("if caluse use effect item"+JSON.stringify(item));
-            console.log("if caluse use effect item id"+item._id);
+           
             if(item._id===itemid){
                 setname(item.name)
                 setcategory(item.category)

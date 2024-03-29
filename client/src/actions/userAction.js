@@ -1,4 +1,6 @@
 import axios from 'axios';
+import { toast } from 'react-toastify'; // Import toast from react-toastify
+import 'react-toastify/dist/ReactToastify.css';
 
 export const registerUser=(user)=>async dispatch=>{
 
@@ -83,9 +85,10 @@ export const deleteUser = (userId) =>async dispatch => {
       console.log("DELETE_USER_REQUEST:"+ JSON.stringify(userId));
       const response =await axios.post('/api/user/deleteUser',{userId:userId});
       console.log("action response:"+ JSON.stringify(response));
-      alert("deleted successfully");
-      window.location.reload();
-  
+      dispatch({type:"DELETE_USER", payload:userId});
+      toast.success("user deleted Successfully !");
+     
+      
     }catch(error) {
       console.log("Error"+error)
     }

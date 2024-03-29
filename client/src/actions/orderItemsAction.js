@@ -1,4 +1,6 @@
 import axios from 'axios'
+import { toast } from 'react-toastify'; // Import toast from react-toastify
+import 'react-toastify/dist/ReactToastify.css';
 
 
 export const getOrderItems = () =>async dispatch => {
@@ -67,8 +69,9 @@ export const deleteOrderItem = (itemId) =>async dispatch => {
     console.log("DELETE_ORDERITEM_REQUEST:"+ JSON.stringify(itemId));
     const response =await axios.post('/api/orderItems/deleteOrderItem',{itemId:itemId});
     console.log("action response:"+ JSON.stringify(response));
-    alert("deleted successfully");
-    window.location.reload();
+    dispatch({type:"DELETE_ITEM", payload:itemId});
+    toast.success("Menu Item deleted Successfully !");
+   
 
   }catch(error) {
     console.log("Error"+error)

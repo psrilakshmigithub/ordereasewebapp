@@ -14,6 +14,11 @@
             error: action.payload,
             loading:false
         }
+        case "DELETE_ITEM": return {
+            ...state,            
+            orderItems: state.orderItems.filter(item => item._id !== action.payload)
+           
+        }
         default :return state
 
     }
