@@ -9,6 +9,8 @@ export const orderAction=(token, subtotal)=>async(dispatch,getstate)=>{
         const response=await axios.post('/api/userOrders/placeorder',{token, subtotal,currentUser,cartItems})
         console.log(response)   
         dispatch({type:"PLACE_ORDER_SUCCESS",payload:response.data})
+        dispatch({ type: "CART_CLEAR_ITEMS" });
+        localStorage.removeItem("cartItems");
         
     }
     catch(error){
@@ -34,3 +36,36 @@ catch(error){
 }
 
 }
+
+
+export const allUserOrders=()=>async (dispatch,getstate)=>{
+   try{
+        dispatch({type:"ALLUSER_ORDERS_REQUEST"})
+       const response= await axios.get('/api/userOrders/allOrders')
+       console.log("all user orders action response : "+ json.toString(response));
+       dispatch({type:"ALLUSER_ORDERS_SUCCESS",payload:response.data})
+    
+    }
+    catch(error){
+         dispatch({type:"ALLUSER_ORDERS_FAILED",payload:error})
+    }
+    
+    }
+
+    export const updateOrderStatus = (orderId) =>async dispatch => {
+
+
+        try {
+         
+          const response =await axios.post('/api/userOrders/updateOrderStatus',{orderId:orderId});
+          console.log("action response:"+ JSON.stringify(response));
+          alert("status updated successfully");
+          window.location.reload();
+      
+        }catch(error) {
+          console.log("Error"+error)
+        }
+      
+      }
+
+

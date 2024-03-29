@@ -1,6 +1,9 @@
 import react, { useState, useEffect } from 'react'
 import { UseDispatch, useDispatch } from 'react-redux'
 import {registerUser} from "../actions/userAction"
+import { toast } from 'react-toastify'; // Import toast from react-toastify
+import 'react-toastify/dist/ReactToastify.css';
+
 
 export default function RegisterScreen() {
     const [name, setname] = useState('')
@@ -20,6 +23,7 @@ export default function RegisterScreen() {
             }
             console.log(user);
             dispatch(registerUser(user));
+            toast.success("Registered Successfully !");
         }
     }
 

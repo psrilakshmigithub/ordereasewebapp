@@ -20,6 +20,38 @@ router.post('/getMyOrders',async(req,res)=>{
 })
 
 
+router.get('/allOrders',async(req,res)=>{
+   
+    console.log("all orders");
+    try{
+        const response=await userOrder.find({}).sort({_id:-1})
+        console.log("all orders: "+JSON.stringify(response))
+        res.send(response);
+    }
+    catch(error){
+        console.error('Error while retrieving all orders:', error);
+        res.status(400).json({ message: "Something went wrong" + error })
+    }
+
+})
+
+router.post('/updateOrderStatus',async(req,res)=>{
+   
+    console.log("update  order status");
+    try{
+        const updateOrder=await userOrder.findOne({_id:req.body.orderId})
+        console.log("updateOrder : "+JSON.stringify(updateOrder))
+        updateOrder.isDelivered=true
+        await updateOrder.save();
+        res.send("Order status updated");
+    }
+    catch(error){
+        console.error('Error while retrieving all orders:', error);
+        res.status(400).json({ message: "Something went wrong" + error })
+    }
+
+})
+
 router.post("/placeorder", async (req, res) => {
     console.log("entered post " + req.body);
     const { token, subtotal, currentUser, cartItems } = req.body;

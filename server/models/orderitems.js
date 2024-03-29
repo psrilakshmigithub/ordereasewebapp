@@ -7,6 +7,7 @@ const orderItemSchema=mongoose.Schema({
     category:{type:String,require},
     image:{type:String,require},
     description:{type:String,require}
+    
 
 
 },{

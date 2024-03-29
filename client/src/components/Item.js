@@ -14,6 +14,7 @@ export default function Item({ ItemInfo }) {
     const dispatch=useDispatch();
     function addtocart(){
         dispatch(addToCartAction(ItemInfo,quantity,varient))
+
     }
     return (
 
@@ -27,7 +28,7 @@ export default function Item({ ItemInfo }) {
                <div className='flex-container ' >
                 <div className='w-100'>
                     <label className='w-100 m-1'>varients</label>
-                    <select value={varient}   onChange={(e)=> setVarient(e.target.value)}>
+                    <select className='form-control' value={varient}   onChange={(e)=> setVarient(e.target.value)}>
                         {ItemInfo.varients.map((varient) => {
                             return <option value={varient}>{varient}</option>
                         })}
@@ -35,23 +36,23 @@ export default function Item({ ItemInfo }) {
                 </div>
                 <div className='w-100 '>
                     <label className='w-100 m-1'>Quanities</label>
-                    <select value={quantity}  onChange={(e)=> setQuantity(e.target.value)}>
+                    <select className='form-control'  value={quantity}  onChange={(e)=> setQuantity(e.target.value)}>
                         {[...Array(10).keys()].map((x,i)=>{
                              return <option value={i+1}>{i+1}</option>
 
                         })
                            
-                        }
+                        } 
                     </select>
                 </div>
             </div>
-            <div className='flex-container'>
+            <div className='flex-container mt-2'>
                 <div className='m-1 w-100'>
-                    <label className='w-100'>Price:  $ {ItemInfo.prices[0][varient]*quantity }</label>
+                    <label className='form-control w-100'>Price:  $ {ItemInfo.prices[0][varient]*quantity }</label>
                   
                 </div>
                 <div className='m-1 w-100'>
-                    <button className='btn btn-primary ' onClick={addtocart}>Add to Cart</button>
+                    <button className='form-control '  style={{"backgroundColor":"rgb(182, 33, 33)", "color":"white","fontSize":"15px"}} onClick={addtocart}>Add to Cart</button>
                 </div>
             </div>
         </div>

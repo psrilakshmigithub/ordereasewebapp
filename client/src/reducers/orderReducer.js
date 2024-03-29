@@ -13,7 +13,7 @@ export const orderReducer=(state={},action)=>{
         }
         case "PLACE_ORDER_FAILED":return{
             loading:true,
-            //error:action.payload,
+            error:action.payload,
             success:false,
         }
         default: return state
@@ -21,6 +21,10 @@ export const orderReducer=(state={},action)=>{
     }
 
 }
+
+export const clearCartReducer = () => (dispatch) => {
+    dispatch({ type: CART_CLEAR_ITEMS });
+  };
 
 export const myOrdersReducer=(state={myOrders:[]},action)=>{
 
@@ -36,6 +40,30 @@ export const myOrdersReducer=(state={myOrders:[]},action)=>{
 
         }
         case "MYORDERS_REQUEST_FAILED":return{
+            loading:true,
+            error:action.payload,
+            success:false,
+        }
+        default: return state
+
+    }
+
+}
+
+export const allOrdersReducer=(state={allOrders:[]},action)=>{
+
+    switch(action.type){
+        case "ALLUSER_ORDERS_REQUEST":return{
+            loading:true
+            
+        }
+        case "ALLUSER_ORDERS_SUCCESS":return{
+            loading:false,
+            success:true,
+            allOrders:action.payload
+
+        }
+        case "ALLUSER_ORDERS_FAILED":return{
             loading:true,
             error:action.payload,
             success:false,

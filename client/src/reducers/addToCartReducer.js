@@ -15,6 +15,11 @@ export const addToCartReducer=(state={cartItems:[]},action)=>{
             cartItems:[...state.cartItems,action.payload]
         }
     }
+    case "CART_CLEAR_ITEMS":
+        return {
+            ...state,
+            cartItems: [], // Set cartItems to an empty array to clear the cart
+          };
     case "DELETE_QUANTITY":
         const item= state.cartItems.find(i=>i._id===action.payload._id)
         if(item){

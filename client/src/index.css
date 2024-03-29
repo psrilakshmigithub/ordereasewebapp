@@ -46,6 +46,22 @@ h2{
   margin: 5px;
 }
 
+.adminActions{
+  padding: 10px;
+  background-color: brown;
+}
+
+.adminActions li{
+ list-style-type: none;
+ display: inline !important;
+ color: white !important;
+}
+.adminActions li a{
+ 
+  color: white!important;
+  padding: 30px !important;
+ }
+
 .btn{
   background-color: red;
 }
@@ -54,4 +70,12 @@ h2{
 }
 .cart-items{
   border: 1px solid  rgb(182, 33, 33) !important;
+}
+tr,td,th{
+  text-align: left;
+}
+button{
+  background-color:rgb(182, 33, 33);
+  color:white;
+  font-size:"20px"
 }

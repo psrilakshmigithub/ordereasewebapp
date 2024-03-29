@@ -17,6 +17,35 @@ router.post("/register", async (req, res) => {
 })
 
 
+
+router.post('/deleteUser', async (req, res) => {
+    try {
+            
+        await User.findOneAndDelete({ _id: req.body.userId });
+       
+        return res.send("Deleted successfully");
+
+    } catch (err) {
+        console.log(err);
+        return res.status(400).json({ message: err });
+       
+    }
+
+});
+
+router.get("/allusers", async (req, res) => {
+
+    const response = await User.find();
+    try {
+        res.send(response);
+    }
+    catch (error) {
+        res.status(400).json({ message: error.message })
+    }
+
+})
+
+
 router.post("/login", async (req, res) => {
 
     const { email, password } = req.body;
@@ -26,7 +55,7 @@ router.post("/login", async (req, res) => {
 
         if (user.length > 0) {
             const currentUser = {
-                name:user[0].name,
+                name: user[0].name,
                 email: user[0].email,
                 password: user[0].password,
                 isAdmin: user[0].isAdmin,
