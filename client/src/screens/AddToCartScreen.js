@@ -30,7 +30,7 @@ export default function CartScreen() {
         <>
             <div className='row  justify-content-center  '>
                 {cartItems.length > 0 ?
-                    (<><h1>Cart</h1>
+                    (<><h2>My Cart</h2>
                         <div className='row col-md-12 justify-content-center'>
                             <div className='m-5 col-md-7  p-1 mb-5 bg-white rounded'>
                                 {cartItems.map(item => {
@@ -102,7 +102,7 @@ export default function CartScreen() {
 
                     </>) : (<>
                         <div className='row justify-content-center'>
-                            <h1>Cart is empty</h1>
+                            <h2>Cart is empty</h2>
                         </div>
                     </>)}
             </div>

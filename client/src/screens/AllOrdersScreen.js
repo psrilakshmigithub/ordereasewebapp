@@ -22,7 +22,7 @@ export default function AllOrderScreen(){
 return(
 <>
 <div className='row justify-content-center col-md-12'>
-            <h1>All Orders</h1>
+            <h2>All Orders</h2>
       
             {loading ? (
               <h1>Loading...</h1>

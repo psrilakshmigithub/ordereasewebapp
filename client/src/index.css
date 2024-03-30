@@ -27,7 +27,7 @@ input{
   box-shadow: none !important;
 }
 
-h2{
+h2,h1{
   color: rgb(182, 33, 33) !important;
 }
 .text-left{

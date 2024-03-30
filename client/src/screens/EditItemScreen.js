@@ -105,7 +105,7 @@ return(
 <>
 <div className='row justify-content-center'>
    
-    <h1>Edit Pizza</h1>
+    <h2>Edit Pizza</h2>
   
 <div className=' col-md-8'>
     <form onSubmit={formHandler} className='justify-content-center' > 

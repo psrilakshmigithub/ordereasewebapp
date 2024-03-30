@@ -19,7 +19,7 @@ const {allUsers,loading,error,success}=allUserState
     return (
         <>
          <div className='justify-content-center col-md-12'>
-            <h1>All Users</h1>
+            <h2>All Users</h2>
       
             {loading ? (
               <h1>Loading...</h1>

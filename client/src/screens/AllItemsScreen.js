@@ -19,7 +19,7 @@ export default function AllItemsScreen() {
   return (
     <>
       <div className='row justify-content-center col-md-12'>
-        <h1>Menu Items</h1>
+        <h2>Menu Items</h2>
 
         {loading ? (
           <h1>Loading...</h1>

@@ -23,7 +23,7 @@ export default function Item({ ItemInfo }) {
         <div className='m-5 shadow-lg p-3 mb-5 bg-white rounded '>
         {ItemInfo.isSpecial && 
         <div className='container' style={{"textAlign":"left"}} >
-        <span className="badge bg-danger w-40">Special</span>
+        <span className="badge bg-danger w-40">Chef's Special</span>
         </div>
 }
               <div className='container' >
@@ -59,7 +59,7 @@ export default function Item({ ItemInfo }) {
                 </div>
             </div>
             <div className='flex-container mt-2'>
-               <input onChange={(e)=>setInstructions(e.target.value)} type="text" className='form-control w-100 m-1' placeholder='Special instructions..'></input>               
+               <input onChange={(e)=>setInstructions(e.target.value)} type="text" className='form-control w-100 m-1' placeholder='Any preferences..'></input>               
             </div>
             <div className='flex-container mt-2'>              
                 <div className='m-2 w-100'>

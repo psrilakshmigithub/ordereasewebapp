@@ -67,7 +67,7 @@ export default function AddItemScreen() {
     return (
         <>
             <div className='row justify-content-center '>
-                <h1>Add Pizza</h1>
+                <h2>Add Pizza</h2>
                
                 <div className='col-md-8'>
                     <form onSubmit={formHandler} className='justify-content-center' >

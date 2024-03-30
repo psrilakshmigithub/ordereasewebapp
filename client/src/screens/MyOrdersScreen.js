@@ -20,7 +20,7 @@ export default function MyOrdersScreen() {
 
             <div className='container'>
                 <div className='row justify-content-center'>
-                    <h1>My Orders</h1>
+                    <h2>My Orders</h2>
                     <div className='row col-md-12 justify-content-center'>
                             <div className='m-5 col-md-8  p-1 mb-5 bg-white rounded'>
 
