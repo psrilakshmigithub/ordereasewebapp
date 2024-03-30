@@ -27,7 +27,7 @@ dispatch(loginUser(user))
         <div className="row justify-content-center mt-5">
                 <div className="col-md-5 mt-5">
                     <h2 className="text-center m-2" style={{ fontSize: '35px' }}>Login</h2>
-                    <div>                       
+                    <div className='m-5 shadow-lg p-3 mb-5 bg-white rounded'>                       
                         <input required type="text" placeholder="email" className="form-control" 
                            onChange={(e)=>setemail(e.target.value)}  value={email} />
                         <input required

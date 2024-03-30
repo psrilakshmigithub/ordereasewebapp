@@ -23,7 +23,7 @@ export const orderReducer=(state={},action)=>{
 }
 
 export const clearCartReducer = () => (dispatch) => {
-    dispatch({ type: CART_CLEAR_ITEMS });
+    dispatch({ type: "CART_CLEAR_ITEMS" });
   };
 
 export const myOrdersReducer=(state={myOrders:[]},action)=>{
@@ -67,6 +67,15 @@ export const allOrdersReducer=(state={allOrders:[]},action)=>{
             loading:true,
             error:action.payload,
             success:false,
+        }
+        case "UPDATE_ORDERS_STATUS":return{
+            ...state,
+        allOrders: state.allOrders.map(item =>
+          item._id === action.payload
+            ? { ...item, isDelivered: true }
+            : item
+        )
+            
         }
         default: return state
 

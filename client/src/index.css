@@ -68,9 +68,9 @@ h2{
 .items-container{
   border: 1px solid  rgb(182, 33, 33) !important;
 }
-.cart-items{
+/* .cart-items{
   border: 1px solid  rgb(182, 33, 33) !important;
-}
+} */
 tr,td,th{
   text-align: left;
 }
@@ -78,4 +78,11 @@ button{
   background-color:rgb(182, 33, 33);
   color:white;
   font-size:"20px"
+}
+
+nav-link a{
+  font-size:"20px"!important;
+}
+.menu-items td{
+  width: 20%;
 }

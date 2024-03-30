@@ -6,7 +6,8 @@ const orderItemSchema=mongoose.Schema({
     prices:[],
     category:{type:String,require},
     image:{type:String,require},
-    description:{type:String,require}
+    description:{type:String,require},
+    isSpecial:{type:Boolean}
     
 
 

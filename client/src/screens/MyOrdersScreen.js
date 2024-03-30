@@ -21,72 +21,50 @@ export default function MyOrdersScreen() {
             <div className='container'>
                 <div className='row justify-content-center'>
                     <h1>My Orders</h1>
+                    <div className='row col-md-12 justify-content-center'>
+                            <div className='m-5 col-md-8  p-1 mb-5 bg-white rounded'>
 
-                    <div className='col-md-8'>
-                        <div className='flex-container cart-items'>
-                            <table className='table'>
-                                <thead className='thead-dark'>
-                                    <tr>
-                                    <th>
-                                        Ordered Items
-                                    </th>
-                                    <th>
-                                        Address
-                                    </th>
-                                    <th>
-                                        Status
-                                    </th>
-                                    </tr>
-                                    
-                                </thead>
-                                <tbody>
-                                    {myOrders &&
+                            {myOrders &&
                                         myOrders.map(order => {
                                             return (
-                                                <tr>
-                                                    <td>
-                                                        <div>
+                                                <div className='shadow-lg p-3 mb-3 bg-white rounded flex-container justify-content-center cart-items'>
+                                                           <div className='m-1 w-50 text-center flex-container'>
                                                             {order.orderItems.map(item => {
                                                                 return (
-                                                                    <div>
-                                                                        {item.name} - {item.quantity} -{item.price}
-                                                                    </div>
+                                                                    
+                                                                      <>
+                                                                      {item.name} -${item.price}
+                                                                      <br></br>
+                                                                      </>  
+                                                                   
+                                                                    
 
                                                                 )
 
                                                             })}
-
-                                                        </div>
-                                                    </td>
-                                                    <td>
-                                                        {order.shippingAddress.street}   <br>
+                                                                
+                                                                </div>
+                                                            <div className='m-1 w-50 text-center'>
+                                                            {order.shippingAddress.street}   <br>
                                                         </br>
                                                         {order.shippingAddress.city} <br>
                                                         </br>
                                                         {order.shippingAddress.country}
-                                                    </td>
-                                                    <td>
-                                                        Total Price : {order.orderAmount} <br>
+                                                            </div>
+                                                            <div className='m-1 w-50 text-center'>
+                                                            Total Price : {order.orderAmount} <br>
                                                         </br>
                                                         Status : {(order.isDelivered ? (<>Delivered</>) : (<>Ordered</>))}
 
-                                                    </td>
+                                                            </div>
+ 
+                                                        </div> 
+                                            )})}
+                           
+                                </div>
+                                </div>
 
-                                                </tr>
-                                            )
-
-                                        })
-                                    }
-
-
-                                </tbody>
-
-                            </table>
-
-
-
-                        </div>
-                    </div>
+                    
 
 
                 </div>

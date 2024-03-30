@@ -29,11 +29,11 @@ export default function RegisterScreen() {
 
 
     return (
-        <div>
+        <div >
             <div className="row justify-content-center mt-5">
                 <div className="col-md-5 mt-5">
                     <h2 className="text-center m-2" style={{ fontSize: '35px' }}>Register</h2>
-                    <div>
+                    <div className='m-5 shadow-lg p-3 mb-5 bg-white rounded'>
                         <input required type="text" placeholder="name" className="form-control"
                          onChange={(e)=>setname(e.target.value)}  value={name} />
                         <input required type="text" placeholder="email" className="form-control" 

@@ -1,5 +1,8 @@
 import axios from "axios"
 import { json } from "react-router-dom"
+import { toast } from 'react-toastify'; // Import toast from react-toastify
+import 'react-toastify/dist/ReactToastify.css';
+
 export const orderAction=(token, subtotal)=>async(dispatch,getstate)=>{
 
     try{
@@ -53,14 +56,12 @@ export const allUserOrders=()=>async (dispatch,getstate)=>{
     }
 
     export const updateOrderStatus = (orderId) =>async dispatch => {
-
-
-        try {
-         
+        try {         
           const response =await axios.post('/api/userOrders/updateOrderStatus',{orderId:orderId});
           console.log("action response:"+ JSON.stringify(response));
-          alert("status updated successfully");
-          window.location.reload();
+          dispatch({type:"UPDATE_ORDERS_STATUS",payload:orderId}) 
+          toast.success("Order Status Updated !");
+          
       
         }catch(error) {
           console.log("Error"+error)

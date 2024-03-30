@@ -23,7 +23,7 @@ export default function CheckOut(props){
            currency='CAD'
            stripeKey='pk_test_51Os77uJB9nASa6ORXfwveBhbvm9cmHwZMD62RLVDcwtlXlbLYxtJw5xI82ZUUdWOBZ6u6fZRJnPJfbe5faqXGBiO00XjkK186o'
            >
-            <button style={{"backgroundColor":"red", "color":"white","fontSize":"20px"}} className='btn'>Pay Now</button>
+            <button style={{"backgroundColor":"rgb(182, 33, 33)", "color":"white","fontSize":"20px"}} className='btn'>Pay Now</button>
        
         </StripeCheckout>
        

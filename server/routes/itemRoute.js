@@ -37,7 +37,9 @@ router.post('/postNewOrderItems', async (req, res) => {
             prices,
             category,
             description,
-            image } = req.body;
+            image,
+            isSpecial
+         } = req.body;
 
         const newItem = new orderItem({
 
@@ -46,7 +48,8 @@ router.post('/postNewOrderItems', async (req, res) => {
             prices,
             category,
             description,
-            image
+            image,
+            isSpecial
         })
         const items = await newItem.save();
         console.log("items :" + items);
@@ -66,9 +69,11 @@ router.post('/editOrderItem', async (req, res) => {
         console.log("item requested from db  :" +JSON.stringify(oldItem));
         oldItem.name = updateItem.name
         oldItem.category = updateItem.category
+        oldItem.isSpecial = updateItem.isSpecial
         oldItem.description = updateItem.description
         oldItem.image = updateItem.image
         oldItem.prices = [updateItem.prices]
+        
         const item = await oldItem.save();
         console.log("item updated successfully wit new :" + item);
         return res.send(item);

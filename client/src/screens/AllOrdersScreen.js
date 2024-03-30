@@ -4,6 +4,7 @@ import {  useDispatch ,useSelector} from 'react-redux'
 import { useState } from 'react';
 import {allUserOrders,updateOrderStatus} from '../actions/orderAction';
 
+
 export default function AllOrderScreen(){
     const dispatch = useDispatch();
     const allOrdersState= useSelector(state=>state.allOrdersReducer)
@@ -48,7 +49,7 @@ return(
                       <td>{order.orderAmount}</td>
                       <td>{order.createdAt.substring(0,10)}</td>
                       
-                      <td>{order.isDelivered?(<h3>Delivered</h3>):
+                      <td>{order.isDelivered?(<h5>Delivered</h5>):
                       (<button className='form-control' style={{"backgroundColor":"rgb(182, 33, 33)", "color":"white","fontSize":"20px"}}  onClick={() => handleDeliver(order._id)}>Deliver</button>)}</td> 
                     </tr>
                   ))}
