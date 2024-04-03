@@ -46,7 +46,7 @@ return(
                       <td>{order._id}</td>
                       <td>{order.email}</td>
                       {/* <td>{order.userId}</td> */}
-                      <td>{order.orderAmount}</td>
+                      <td>${order.orderAmount/100}</td>
                       <td>{order.createdAt.substring(0,10)}</td>
                       
                       <td>{order.isDelivered?(<h5>Delivered</h5>):

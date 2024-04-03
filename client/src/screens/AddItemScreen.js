@@ -21,31 +21,36 @@ export default function AddItemScreen() {
     const [description, setdescription] = useState("");
     const [image, setimage] = useState("");
     const [isSpecial, setSpecial] = useState(false);
+    const [formError, setFormError] = useState('');
 
 
     useEffect(() => {
-        console.log("success :" + success)
         if (success) {
-
             toast.success("Item Added Successfully !");
-            setname("")
-            setcategory("")
-            setdescription("")
-            setimage("")
-            setSpecial(false)
-            setsprice("")
-            setmprice("")
-            setlprice("")
-
-
+            clearForm();
         } else if (error) {
-            toast.error("Something went wrong !"); // Use toast.error directly
+            toast.error("Something went wrong !");
         }
-
     }, [success, error])
+
+
+    const clearForm = () => {
+        setname("");
+        setsprice("");
+        setmprice("");
+        setlprice("");
+        setcategory("");
+        setdescription("");
+        setimage("");
+        setSpecial(false);
+    }
 
     function formHandler(e) {
         e.preventDefault();
+        if (!name || !sprice || !mprice || !lprice || !category || !description || !image) {
+            setFormError('All fields are required');
+        } else {
+            setFormError('');
         const newItem = {
             name,
             prices: {
@@ -60,6 +65,7 @@ export default function AddItemScreen() {
         };
 
         dispatch(postNewOrderItem(newItem));
+    }
 
 
     }
@@ -68,13 +74,13 @@ export default function AddItemScreen() {
         <>
             <div className='row justify-content-center '>
                 <h2>Add Pizza</h2>
-               
+                {formError && <p style={{ color: 'red' }}>{formError}</p>}
                 <div className='col-md-8'>
                     <form onSubmit={formHandler} className='justify-content-center' >
                         <input className='form-control' type="text" placeholder='Name' value={name} onChange={(e) => { setname(e.target.value) }}></input>
-                        <input className='form-control' type="text" placeholder='Small Price' value={sprice} onChange={(e) => { setsprice(e.target.value) }}></input>
-                        <input className='form-control' type="text" placeholder='Medium Price' value={mprice} onChange={(e) => { setmprice(e.target.value) }}></input>
-                        <input className='form-control' type="text" placeholder='Large Price' value={lprice} onChange={(e) => { setlprice(e.target.value) }}></input>
+                        <input className='form-control' type="number" placeholder='Small Price' value={sprice} onChange={(e) => { setsprice(e.target.value) }}></input>
+                        <input className='form-control' type="number" placeholder='Medium Price' value={mprice} onChange={(e) => { setmprice(e.target.value) }}></input>
+                        <input className='form-control' type="number" placeholder='Large Price' value={lprice} onChange={(e) => { setlprice(e.target.value) }}></input>
                         <input className='form-control' type="text" placeholder='Category' value={category} onChange={(e) => { setcategory(e.target.value) }}></input>
                         <input className='form-control' type="text" placeholder='Description' value={description} onChange={(e) => { setdescription(e.target.value) }}></input>
                         <input className='form-control' type="text" placeholder='Image url' value={image} onChange={(e) => { setimage(e.target.value) }}></input>
@@ -86,7 +92,7 @@ export default function AddItemScreen() {
                             <label className='m-1'>Chef Special</label>
                         </div>
 
-
+                      
 
                         <button className='form-control btn mt-3' style={{ "backgroundColor": "rgb(182, 33, 33)", "color": "white", "fontSize": "20px" }} type='submit'>Add Item</button>
                     </form>

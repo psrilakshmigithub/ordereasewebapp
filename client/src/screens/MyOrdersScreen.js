@@ -52,7 +52,7 @@ export default function MyOrdersScreen() {
                                                         {order.shippingAddress.country}
                                                             </div>
                                                             <div className='m-1 w-50 text-center'>
-                                                            Total Price : {order.orderAmount} <br>
+                                                            Total Price :$ {order.orderAmount/100} <br>
                                                         </br>
                                                         Status : {(order.isDelivered ? (<>Delivered</>) : (<>Ordered</>))}
 

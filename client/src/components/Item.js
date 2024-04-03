@@ -3,6 +3,8 @@ import { useState } from 'react';
 import { UseDispatch,useDispatch,useSelector } from 'react-redux';
 import Modal from 'react-bootstrap/Modal';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { toast } from 'react-toastify'; // Import toast from react-toastify
+import 'react-toastify/dist/ReactToastify.css';
 import ItemDescription from '../components/ItemDescription';
 import {addToCartAction} from '../actions/addToCartAction';
 
@@ -12,10 +14,12 @@ export default function Item({ ItemInfo }) {
     const [show, setShow] = useState(false);  
     const [data, setData] = useState(ItemInfo);
     const [instructions, setInstructions] = useState("");
+    
     const dispatch=useDispatch();
+
     function addtocart(){
         dispatch(addToCartAction(ItemInfo,quantity,varient,instructions))
-
+        toast.success("Item added to cart successfully");
     }
     return (
 

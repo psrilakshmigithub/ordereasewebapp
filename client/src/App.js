@@ -24,7 +24,7 @@ import { BrowserRouter, Route, Routes, Link, Switch } from 'react-router-dom';
 
 function App() {
   const toastOptions = {
-    autoClose: 10000, 
+    autoClose: 3000, 
     position: 'top-center',// Auto-close duration in milliseconds (e.g., 5000 for 5 seconds)
     // Other default options...
   };
