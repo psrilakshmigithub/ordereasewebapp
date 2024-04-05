@@ -61,10 +61,10 @@ export default function CartScreen() {
                                                     
                                                     <h5>
                                                         Quantity:
-                                                        <i className='fa fa-minus' aria-hidden="true" onClick={() => dispatch(addToCartAction(item, item.quantity - 1, item.varient))}></i>
+                                                        <i className='fa fa-minus' aria-hidden="true" onClick={() => dispatch(addToCartAction(item, item.quantity - 1, item.varient,item.instructions))}></i>
 
                                                         {item.quantity}
-                                                        <i className='fa fa-plus' aria-hidden="true" onClick={() => dispatch(addToCartAction(item, item.quantity + 1, item.varient))}></i>
+                                                        <i className='fa fa-plus' aria-hidden="true" onClick={() => dispatch(addToCartAction(item, item.quantity + 1, item.varient,item.instructions))}></i>
 
                                                     </h5>
 

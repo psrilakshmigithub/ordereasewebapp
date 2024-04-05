@@ -18,7 +18,7 @@ export  const addToCartAction=(item,quantity,varient,instructions)=>(dispatch,ge
         
        toast.success("Quantity should be less than 10 !");
     
-    }else if(cartItem.quantity<0){
+    }else if(cartItem.quantity<=0){
         dispatch({type:"DELETE_QUANTITY",payload:item});       
     }else{
         dispatch({type:"ADD_TO_CART",payload:cartItem});

@@ -7,6 +7,8 @@ import { toast } from 'react-toastify'; // Import toast from react-toastify
 import 'react-toastify/dist/ReactToastify.css';
 import ItemDescription from '../components/ItemDescription';
 import {addToCartAction} from '../actions/addToCartAction';
+import { redirect } from 'react-router-dom';
+
 
 export default function Item({ ItemInfo }) {
     const [quantity,setQuantity]=useState(1);
@@ -14,12 +16,19 @@ export default function Item({ ItemInfo }) {
     const [show, setShow] = useState(false);  
     const [data, setData] = useState(ItemInfo);
     const [instructions, setInstructions] = useState("");
-    
+    const userState = useSelector(state => state.loginUserReducer)
+    const isCurrentUserEmpty = !userState.currentUser || userState.currentUser.length === 0; 
     const dispatch=useDispatch();
 
     function addtocart(){
-        dispatch(addToCartAction(ItemInfo,quantity,varient,instructions))
-        toast.success("Item added to cart successfully");
+if(!isCurrentUserEmpty){
+    dispatch(addToCartAction(ItemInfo,quantity,varient,instructions))
+    toast.success("Item added to cart successfully");
+}
+else{
+    window.location.href='/login'
+}
+      
     }
     return (
 

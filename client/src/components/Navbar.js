@@ -10,9 +10,6 @@ export default function Navbar() {
   const userState = useSelector(state => state.loginUserReducer)
   const dispatch = useDispatch();
   const isCurrentUserEmpty = !userState.currentUser || userState.currentUser.length === 0;
-  console.log('Is currentUser empty?', isCurrentUserEmpty);
-  //console.log("userDetails:"+ Object.keys(userState.currentUser).length);
-  // console.log("cuurent user:"+ userDetails.length>0);
   function logout() {
     dispatch(logoutUser())
   }
@@ -27,28 +24,37 @@ export default function Navbar() {
           </button>
           <div className="collapse navbar-collapse justify-content-end" id="navbarNav">
             <ul className="navbar-nav ml-auto">
-              <li className="nav-item active">
-                <a className="nav-link" href="/">Home <span className="sr-only"></span></a>
-              </li>
+              {(!isCurrentUserEmpty) &&
 
+                (
+                  (!userState.currentUser.isAdmin) &&
+                  (
+                    <li className="nav-item active">
+                      <a className="nav-link" href="/">Home <span className="sr-only"></span></a>
+                    </li>
+                  )
+
+
+                )
+              }
               {(!isCurrentUserEmpty) ?
                 (
                   <div>
                     {(userState.currentUser.isAdmin) ?
                       (
                         <div className="dropdown">
-                        <Nav>
-                          <NavDropdown
-                            id="nav-dropdown-dark-example"
-                            title={userState.currentUser.name}
-                            menuVariant="light"
-                          >
-                           
-                            <NavDropdown.Item onClick={logout}>LogOut</NavDropdown.Item>
-                          </NavDropdown>
-                        </Nav>
-                      </div>
-                       
+                          <Nav>
+                            <NavDropdown
+                              id="nav-dropdown-dark-example"
+                              title={userState.currentUser.name}
+                              menuVariant="light"
+                            >
+
+                              <NavDropdown.Item onClick={logout}>LogOut</NavDropdown.Item>
+                            </NavDropdown>
+                          </Nav>
+                        </div>
+
                       )
                       :
                       (
@@ -77,17 +83,17 @@ export default function Navbar() {
                   </li>
                 )
               }
-              {(!isCurrentUserEmpty ) &&
-              
-               (
-                (!userState.currentUser.isAdmin) &&
+              {(!isCurrentUserEmpty) &&
+
+                (
+                  (!userState.currentUser.isAdmin) &&
                   (
                     <li className="nav-item">
-                    <a className="nav-link " href="/addtocart">Cart {cartState.cartItems.length}</a>
-                  </li>
+                      <a className="nav-link " href="/addtocart">Cart {cartState.cartItems.length}</a>
+                    </li>
                   )
-                 
-                
+
+
                 )
               }
             </ul>
