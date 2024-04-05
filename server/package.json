@@ -3,8 +3,10 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index"
-  },
+    "start": "nodemon index",
+    "build": "echo 'No build step needed for Node.js application'"
+
+  }, 
   "author": "",
   "license": "ISC",
   "description": "",
